@@ -1,0 +1,10 @@
+# Playbook to add user 'ans'
+
+- name: create user ans
+  become: yes
+  user:
+    name: ans
+    group: sudo
+    state: present
+
+      #  - name: give ans passwordless sudo rights
