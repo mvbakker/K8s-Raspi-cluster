@@ -1,11 +1,16 @@
+[cluster-root]
+master ansible_ssh_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
+worker1 ansible_ssh_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa 
+worker2 ansible_ssh_user=root ansible_ssh_private_key_file=~/.ssh/id_rsa
+
 [cluster]
-mvbakker1.mylabserver.com ansible_ssh_user=user ansible_ssh_private_key_file=~/.ssh/id_rsb
-mvbakker2.mylabserver.com ansible_ssh_user=user ansible_ssh_private_key_file=~/.ssh/id_rsb 
-mvbakker3.mylabserver.com ansible_ssh_user=user ansible_ssh_private_key_file=~/.ssh/id_rsb
+master
+worker1
+worker2
 
 [master]
-mvbakker1.mylabserver.com
+master
 
 [workers]
-mvbakker2.mylabserver.com
-mvbakker3.mylabserver.com
+worker1
+worker2
