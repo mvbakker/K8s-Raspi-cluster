@@ -7,4 +7,12 @@
     group: sudo
     state: present
 
-      #  - name: give ans passwordless sudo rights
+- name: give ans passwordless sudo rights
+  become: yes
+  blockinfile:
+    path: /etc/sudoers.d/ans_no_password
+    create: yes
+    block: |
+      # User rules for admin
+      admin ALL=(ALL) NOPASSWD:ALL
+    state: present
