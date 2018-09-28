@@ -1,7 +1,7 @@
 # The project ansible k8s on RasPi YAML
 
 ---
-- hosts: [cluster]
+- hosts: [cluster-root]
   become: root
   #include variables here
   

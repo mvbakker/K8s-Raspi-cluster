@@ -5,6 +5,7 @@
   user:
     name: ans
     group: sudo
+    password: rVp-tJa8
     state: present
 
 - name: give ans passwordless sudo rights
