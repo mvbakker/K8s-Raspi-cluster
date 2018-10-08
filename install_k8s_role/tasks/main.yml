@@ -1,0 +1,11 @@
+# This role will install docker-ce:
+
+- name: install docker-ce on the nodes
+  include: install-docker.yml
+  tag:
+    - docker
+
+- name: install k8s on the nodes
+  include: install-k8s.yml
+  tag:
+    - k8s

@@ -1,0 +1,36 @@
+# Playbook that installs Docker CE on Raspberry Pi
+
+- name: Add Docker repo key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+
+- name: Add Docker repo
+  apt_repository:
+    repo: deb [arch=armhf] https://download.docker.com/linux/debian stretch stable
+    filename: docker
+    state: present
+    update_cache: true
+
+- name: Unpin Docker
+  command: apt-mark unhold docker-ce
+
+- name: Install Docker
+  apt:
+    name: docker-ce=17.12.1~ce-0~debian
+    state: present
+
+- name: Add 'root' user to Docker group
+  user:
+    name: root
+    groups: docker
+    append: yes
+
+- name: Make sure Docker is running
+  systemd:
+    name: docker.service
+    enabled: yes
+    state: started
+
+- name: Pin Docker
+  command: apt-mark hold docker-ce

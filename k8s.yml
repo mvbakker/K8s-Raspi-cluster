@@ -1,11 +1,11 @@
 # The project ansible k8s on RasPi YAML
 
 ---
-- hosts: [cluster-root]
+- hosts: [cluster]
   become: root
   #include variables here
   
   roles:
     #- { role: setup_network_role }
-    - { role: prepare_cluster_role }
-    #- { role: install_k8s_role }
+    #- { role: prepare_cluster_role }
+    - { role: install_k8s_role }
