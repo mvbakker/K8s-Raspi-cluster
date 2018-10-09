@@ -1,0 +1,13 @@
+# This role will make the targeted node ansible-ready, by:
+# - configure the worker nodes
+# - install K8s on the worker nodes
+
+#- name: network configuration of worker nodes
+#  include: workers_network_config.yml
+#  tag:
+#    - workers_network
+
+#- name: k8s installation on worker nodes
+#  include: workers_k8s_install.yml
+#  tag:
+#    - workers_k8s_install

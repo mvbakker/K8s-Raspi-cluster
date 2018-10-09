@@ -6,6 +6,5 @@
   #include variables here
   
   roles:
-    #- { role: setup_network_role }
-    #- { role: prepare_cluster_role }
-    - { role: install_k8s_role }
+    #- { role: prepare_master_role }
+    #- { role: prepare_workers_role }

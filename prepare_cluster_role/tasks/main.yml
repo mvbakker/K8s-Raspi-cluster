@@ -1,8 +1,0 @@
-# This role will make the targeted node ansible-ready, by:
-# - creating a user
-# - giving the user passwordless sudo rights
-
-- name: adding the user ans with correct permissions
-  include: add_ans_user.yml
-  tag:
-    - ans

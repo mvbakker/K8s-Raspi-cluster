@@ -1,0 +1,11 @@
+# ssh-keygen
+
+# change /etc/network/interfaces.d/50-cloud-init.cfg
+
+# create/edit /etc/network/interfaces.d/eth0
+
+# change preserve_hostname: 'false' to 'true' in /etc/cloud/cloud.cfg 
+
+# overwrite /etc/hostname with correct hostname
+
+# remove 'black-pearl' and add block with hosts of cluster
