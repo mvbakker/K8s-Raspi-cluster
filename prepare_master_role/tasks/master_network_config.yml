@@ -1,10 +1,28 @@
 # ssh-keygen
-- user:
+- name: create ssh keys for master node
+  become: no
+  user:
     name: pirate
     generate_ssh_key: yes
     ssh_key_file: .ssh/id_rsa
 
-# change /etc/network/interfaces.d/50-cloud-init.cfg
+# remove 'auto eth0' line from /etc/network/interfaces.d/50-cloud-init.cfg
+# must be a better way for this.
+- name: remove 'auto eth0' block from network/interfaces
+  become: yes
+  replace:
+    path: /etc/network/interfaces.d/50-cloud-init.cfg
+    regexp: '^\s(auto eth0)?$'
+    replace: ''
+
+# remove 'iface eth0 inet dhcp' line from /etc/network/interfaces.d/50-cloud-init.cfg
+# must be a better way for this.
+- name: remove 'auto eth0' block from network/interfaces
+  become: yes
+  replace:
+    path: /etc/network/interfaces.d/50-cloud-init.cfg
+    regexp: '^\s(iface eth0 inet dhcp)?$'
+    replace: ''
 
 # create/edit /etc/network/interfaces.d/eth0
 

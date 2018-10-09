@@ -1,5 +1,7 @@
 # The project ansible k8s on RasPi YAML
 
+# https://gist.github.com/elafargue/a822458ab1fe7849eff0a47bb512546f
+
 ---
 - hosts: [masters]
   become: root
