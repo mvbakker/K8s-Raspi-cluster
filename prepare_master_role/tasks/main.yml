@@ -2,10 +2,10 @@
 # - configure the master node
 # - install K8s on the master node
 
-#- name: network configuration of master node
-#  include: master_network_config.yml
-#  tag:
-#    - master_network
+- name: network configuration of master node
+  include: master_network_config.yml
+  tag:
+    - master_network
 
 #- name: k8s installation on master node
 #  include: master_k8s_install.yml

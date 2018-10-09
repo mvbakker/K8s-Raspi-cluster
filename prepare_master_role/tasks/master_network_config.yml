@@ -1,4 +1,8 @@
 # ssh-keygen
+- user:
+    name: pirate
+    generate_ssh_key: yes
+    ssh_key_file: .ssh/id_rsa
 
 # change /etc/network/interfaces.d/50-cloud-init.cfg
 

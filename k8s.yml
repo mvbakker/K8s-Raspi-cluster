@@ -1,10 +1,16 @@
 # The project ansible k8s on RasPi YAML
 
 ---
-- hosts: [cluster]
+- hosts: [masters]
   become: root
   #include variables here
   
   roles:
-    #- { role: prepare_master_role }
+    - { role: prepare_master_role }
+
+- hosts: [workers]
+  become: root
+  #include variables here
+
+  roles:
     #- { role: prepare_workers_role }
